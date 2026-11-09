@@ -20,7 +20,7 @@ if st.button("Generate Learning Plan"):
         with st.spinner("AI is making your plan + videos... Please wait..."):
             try:
                 genai.configure(api_key=api_key)
-                model = genai.GenerativeModel("gemini-2.0-flash")
+                model = genai.GenerativeModel("gemini-3.8-flash")
                 prompt = f"Make a {days}-day learning plan to master {topic} for a {level} learner who studies {hours} hours per day. For each day give: Title, What to Learn (3 points), Practice Task. Keep it simple and clear."
                 response = model.generate_content(prompt)
                 plan = response.text
